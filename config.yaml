@@ -1,0 +1,42 @@
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  vector_store: data/vector_store
+  model_path: data/models/classifier.pkl
+
+ocr:
+  engine: easyocr        # options: easyocr | tesseract
+  languages: [en]
+
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+  chunk_size: 500
+  chunk_overlap: 50
+
+llm:
+  base_url: http://localhost:11434   # Ollama server address
+  model: llama3.1:8b                 # Q4_K_M ~4.7 GB — fits RTX 4060 8GB with 2.5 GB headroom
+  temperature: 0.1
+  max_tokens: 1024                   # tokens to generate (num_predict)
+  num_ctx: 4096                      # KV cache window — ~0.5 GB at this size; do NOT raise above 8192 on 8 GB VRAM
+
+classifier:
+  n_estimators: 100
+  max_depth: 10
+  min_samples_split: 5
+  categories:
+    - Coffee
+    - Food
+    - Transport
+    - Utilities
+    - Entertainment
+    - Healthcare
+    - Shopping
+    - Travel
+    - Other
+
+logging:
+  level: INFO
+  file: logs/spend_sense.log
+  rotation: 10 MB
+  retention: 1 month

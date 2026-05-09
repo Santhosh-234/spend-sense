@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Data & Logs
+data/raw/*
+data/processed/*
+data/vector_store/*
+logs/*.log
+!data/raw/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
+CLAUDE.md

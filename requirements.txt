@@ -1,0 +1,28 @@
+# ── Core ──────────────────────────────────────────────────────────────────────
+pyyaml>=6.0.1
+loguru>=0.7.2
+click>=8.1.7
+Pillow>=10.3.0
+numpy>=1.26.4
+
+# ── OCR ───────────────────────────────────────────────────────────────────────
+easyocr>=1.7.1
+pytesseract>=0.3.10          # optional; only needed if engine=tesseract
+
+# ── Classical ML ──────────────────────────────────────────────────────────────
+scikit-learn>=1.4.2
+joblib>=1.4.0
+
+# ── Embeddings & Vector Store ─────────────────────────────────────────────────
+sentence-transformers>=3.0.1
+faiss-cpu>=1.8.0
+
+# ── LangChain ecosystem ───────────────────────────────────────────────────────
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-ollama>=0.2.0
+langchain-huggingface>=0.1.0
+
+# ── File watching ─────────────────────────────────────────────────────────────
+watchdog>=4.0.1
